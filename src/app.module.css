@@ -1,11 +1,39 @@
 /* Your styles goes here. */
+@font-face {
+  font-family: IRANSans;
+  font-style: normal;
+  font-weight: normal;
+  src: url('./assets/IRANSansWeb.eot');
+  src: url('./assets/IRANSansWeb.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+  url('./assets/IRANSansWeb.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+  url('./assets/IRANSansWeb.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+  url('./assets/IRANSansWeb.ttf') format('truetype');
+}
+
+body{
+  direction: rtl;
+  font-family: IRANSans !important;
+}
 .MenuLinks{
   color: #707070;
   text-decoration: none;
 }
 .routesContainer{
-  height: 400px;
+  height: 550px;
 }
 .headerToolbar{
-  background-color: #299e6f;
+  background-color: #2d5183;
+  color: #FFF;
+}
+.menuItemText{
+  text-align: right;
+  font-size: 13px;
+}
+.headerText{
+  font-size: 17px !important;
+  letter-spacing: 0 !important;
+}
+.loadingStyle{
+  margin: 0 auto;
+  height: 100%;
 }
