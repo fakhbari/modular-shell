@@ -33,14 +33,15 @@ export const getPluginsInManager = ()=>{
                 })
                 : null,
             icon: plugin.icon,
-            title: plugin.title
+            title: plugin.title,
+            name:plugin.name,
           }
         })
         return Promise.all(pluginsRoute)
       }).then(pluginList =>{
         window.services = []
         pluginList.forEach(plugin=>{
-          window.services.push({pluginName:plugin.title , serviceList:plugin.services})
+          window.services.push({pluginName:plugin.name , serviceList:plugin.services})
         })
         return pluginList;
       })

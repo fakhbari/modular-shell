@@ -8,8 +8,16 @@ module.exports = {
                 ...webpackConfig.plugins,
                 new container.ModuleFederationPlugin({
                     name:'shell',
+                    exposes: {
+                        './Services':'./src/services.ts'
+                    },
+                    filename: 'remoteEntry.js',
                     library: { type: "var", name: "shell" },
-                    shared:['react']
+                    shared:[
+                        {'react':{singleton:true,strictVersion:true},
+                            'react-dom':{singleton:true,strictVersion:true},
+                            '@mui/material':{singleton:true,strictVersion:true},
+                        }]
                 })
             ]
             return webpackConfig;

@@ -32,7 +32,7 @@ export function App() {
     const [open, setOpen] = React.useState(true);
     const MenuIcon = Icons.Menu;
     const ChevronLeftIcon = Icons.ChevronLeft;
-    const [plugins, setPlugins] = React.useState([{path:'/',component:Dashboard,icon: "HomeOutlined",title:"داشبورد"}])
+    const [plugins, setPlugins] = React.useState([{path:'/',component:Dashboard,icon: "HomeOutlined",title:"داشبورد",name:'home'}])
 
     const toggleDrawer = () => {
         setOpen(!open);
