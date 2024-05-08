@@ -32,7 +32,7 @@ export function App() {
     const [open, setOpen] = React.useState(true);
     const MenuIcon = Icons.Menu;
     const ChevronLeftIcon = Icons.ChevronLeft;
-    const [plugins, setPlugins] = React.useState([{path:'/',component:Dashboard,icon: "HomeOutlined",title:"داشبورد",name:'home'}])
+    const [plugins, setPlugins] = React.useState([{path:'/',component:Dashboard,icon: "HomeOutlined",title:"داشبورد",name:'home',id:"1"}])
 
     const toggleDrawer = () => {
         setOpen(!open);
@@ -98,7 +98,7 @@ export function App() {
                             plugins.map(plugin =>{
                                 const Icon = Icons[plugin.icon]
                                 return(
-                                    <RouterLink to={plugin.path} className={styles.MenuLinks} >
+                                    <RouterLink to={plugin.path} className={styles.MenuLinks} key={plugin.id}>
                                         <ListItemButton >
                                             <ListItemIcon>
                                                 <Icon/>
@@ -131,7 +131,7 @@ export function App() {
                                     <Routes>
                                         {plugins.map(plugin => {
                                             const ComponentTag:React.ElementType = plugin.component
-                                            return <Route path={plugin.path} element={<ComponentTag />} />
+                                            return <Route path={plugin.path} element={<ComponentTag />} key={plugin.id} />
                                         })}
                                     </Routes>
                                 </React.Suspense>

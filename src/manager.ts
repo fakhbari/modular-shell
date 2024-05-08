@@ -35,6 +35,7 @@ export const getPluginsInManager = ()=>{
             icon: plugin.icon,
             title: plugin.title,
             name:plugin.name,
+              id:plugin.id,
           }
         })
         return Promise.all(pluginsRoute)
